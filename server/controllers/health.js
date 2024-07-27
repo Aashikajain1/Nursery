@@ -1,7 +1,7 @@
 const getHealth = (req, res)=>{
     res.json({
         success: true,
-        message: "Server is running"
+        message: "Server is up and running..."
     })
 }
 
