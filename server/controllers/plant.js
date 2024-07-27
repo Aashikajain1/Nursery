@@ -1,5 +1,4 @@
-import Plant from "./../models/Plant.js"
-
+import Plant from "../models/plant";
 const postPlant = async (req, res) => {
     const {
         name,

@@ -13,6 +13,9 @@ import {
     deletePlantId
 } from "./controllers/plant.js";
 
+import { handlePageNotFound } from "./controllers/errors.js"
+
+
 const app = express()
 app.use(cors())
 app.use(express.json())
@@ -51,9 +54,6 @@ app.get('/health',(req,res)=>{
     });
 })
 
-app.get('/',(req,res)=>{
-    res.send("Hello World");
-})
 
 const PORT = process.env.PORT || 8000
 
