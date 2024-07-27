@@ -1,8 +1,8 @@
-import express from 'express'
-import dotenv from "dotenv"
-dotenv.config()
+import express from 'express';
+import dotenv from "dotenv";
+dotenv.config();
 import mongoose from "mongoose";
-import cors from "cors"
+import cors from "cors";
 
 import { getHealth } from "./controllers/health.js"
 import { 
@@ -39,21 +39,7 @@ app.get("/plants", getPlants)
 app.get("/plant/:id", getPlantId)
 app.put("/plant/:id", putPlantId)
 app.delete("/plant/:id", deletePlantId)
-
 app.use("*", handlePageNotFound)
-
-app.get('/health',(req,res)=>{
-    console.log(req.method)
-    console.log(req.path)
-    console.log(req)
-
-
-    res.send({
-        success:true,
-        message:"API Ran successfully"
-    });
-})
-
 
 const PORT = process.env.PORT || 8000
 
