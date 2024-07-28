@@ -4,7 +4,7 @@ const plantSchema = new Schema({
     name: String,
     category: String,
     image: String,
-    price: Number,
+    price: String,
     description: String
 }, {
     timestamps: true

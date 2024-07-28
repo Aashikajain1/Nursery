@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import PlantCard from "../../component/PlantCard/PlantCard.js"
+import PlantCard from "../../component/PlantCard/PlantCard"
 import axios from "axios"
 import toast, {Toaster} from "react-hot-toast"
+import ImgAdd from "./add.png"
 import { Link } from "react-router-dom"
 
 function Home() {
@@ -23,8 +24,8 @@ function Home() {
 
   return (
     <div>
-      <h1>Plants</h1>
-
+      <h1 className='text-center'>My Nursery</h1>
+      <div className='d-flex flex-wrap justify-content-around'>
       {
         plants.map((plant, i)=>{
           const {
@@ -36,7 +37,8 @@ function Home() {
             description
           } = plant
 
-          return (<PlantCard 
+          return (
+          <PlantCard 
               key={i}
               _id={_id} 
               name={name} 
@@ -44,12 +46,16 @@ function Home() {
               price={price} 
               image={image} 
               description={description}
-              loadPlants={loadPlants} />
+              loadPlants={loadPlants}
+               />
             )
+            
         })
       }
+      </div>
       <Toaster />
       <Link to="/add">
+        <img src={ImgAdd} style={{height:"40px",position:"fixed",right:"10px",bottom:"10px",zIndex:"100 !important"}}/>
       </Link>
     </div> 
   )
